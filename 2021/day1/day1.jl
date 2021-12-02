@@ -1,9 +1,16 @@
 using Test
 
-
-# Returns the number of time a measurement is larger than the previous measurement 
+# Returns the number of times a measurement is larger than the previous measurement 
 function increases(measurements::Vector{Int})
-  1
+  count = 0
+  
+  for i in 2:length(measurements)
+    if measurements[i] > measurements[i-1]
+      count += 1
+    end
+  end
+
+  count
 end
 
 function runtests()
@@ -16,14 +23,13 @@ function runtests()
   @test increases([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == 9
 
   @test increases([1, 2, 3]) == 2
-  @test increases([]) == 0
   @test increases([1]) == 0
   @test increases([1, 0]) == 0
-  @test increses([1, 1, 1, 1]) == 0
-  @test increaes([3, 2, 1]) == 0
+  @test increases([1, 1, 1, 1]) == 0
+  @test increases([3, 2, 1]) == 0
 end
 
-#runtests() # Commented out while I learn Julia typing
+runtests()
 
 input = [1, 2, 3]
 answer = increases(input)
