@@ -1,5 +1,5 @@
 # Advent of Code - 2021-12-01
-## Notes
+## Notes Part 1
 
 1. [Installed Julia v1.7]( https://julialang.org/downloads/) on macOS by dragging the app to the /Applications folder.
 1. The Julia app opens up in a Terminal shell. I prefer using iTerm. So I added `julia` to the path:
@@ -12,8 +12,10 @@
    
    I did not run the first two commands since I noticed that the `/usr/local/bin` folder already existed and `/usr/local/bin/julia` did not exist (so no need to remove it). I suspect the instructions are like this for those who have existing versions of Julia on their path and just want to blindly copy/paste.
 1. Created a `day1.jl` file. Then I run in a terminal: `julia day1.jl` inside the folder the file resides.
+1. The input was 2000 numbers on each line. Added it to the file `input.txt` and added file reading logic to the code. I initially thought the input was going to be a lot fewer numbers.
+1. The answer is 1121.
 
-## Problem description
+## Problem description Part 1
 --- Day 1: Sonar Sweep ---
 
 You're minding your own business on a ship at sea when the overboard alarm goes off! You rush to see if you can help. Apparently, one of the Elves tripped and accidentally sent the sleigh keys flying into the ocean!

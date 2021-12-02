@@ -13,6 +13,7 @@ function increases(measurements::Vector{Int})
   count
 end
 
+# Run unit tests
 function runtests()
   # Trivial unit tests
   @test 1+2 == 3
@@ -29,9 +30,17 @@ function runtests()
   @test increases([3, 2, 1]) == 0
 end
 
+# Reads an input file with an measurement integer on each line, returns a 
+# vector of those measurements as integers.
+function readfile(filename)::Vector{Int}
+  file = open(filename)
+  measurements::Vector{String} = readlines(file) # Each item is a string line
+  map(x -> parse(Int, x), measurements) # Convert all values from String to Int
+end
+
 runtests()
 
-input = [1, 2, 3]
+input = readfile("input.txt")
 answer = increases(input)
 
 println("Advent of Code 2021 - Day 1")
