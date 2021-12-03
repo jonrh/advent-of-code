@@ -26,7 +26,7 @@ function parse_command(command::String)::Command
 end
 
 # Calculates the submarine x and y position after exucuting all the provided 
-# commands. Returns a (x, y, product) tuple where product = x * y.
+# commands. Returns a (x, y, product) tuple where product = x * y. Part 1.
 function getposition(commands::Vector{Command})::Tuple{Int, Int, Int}
   x = 0 # Horizontal position
   y = 0 # Vertical depth
@@ -41,6 +41,25 @@ function getposition(commands::Vector{Command})::Tuple{Int, Int, Int}
   end
   
   (x, y, x*y)
+end
+
+# Part 2
+function getposition2(commands::Vector{Command})::Tuple{Int, Int, Int}
+  aim = 0
+  x = 0 # Horizontal position
+  y = 0 # Vertical depth
+
+  for command in commands
+    if command.direction === down aim += command.units end
+    if command.direction === up aim -= command.units end
+    if command.direction === forward
+      x += command.units
+      y += command.units * aim
+    end
+  end
+  
+  (x, y, x*y)
+
 end
 
 
@@ -84,11 +103,15 @@ function runtests()
     Command(forward, 300),
   ]
 
+  # Part 1 unit tests
   @test getposition(sample_position1) == (15, 10, 150)
   @test getposition(sample_position2) == (1, 0, 0)
   @test getposition(sample_position3) == (1, 0, 0)
   @test getposition(sample_position4) == (600, 2, 1200)
   @test getposition(sample_position5) == (600, 0, 0)
+
+  # Part 2 unit tests
+  @test getposition2(sample_position1) == (15, 60, 900)
 end
 
 # Reads an input file with a command on each line. Example:
@@ -108,9 +131,9 @@ runtests()
 input = readfile("input.txt")
 #input = readfile("input_sample.txt") # Debug while developing
 (x1, y1, answer_part1) = getposition(input)
-(x2, y2, answer_part2) = (1, 2, 3)
+(x2, y2, answer_part2) = getposition2(input)
 
 println("Advent of Code 2021 - Day 2")
 println("Answer, part 1: $answer_part1. (x: $x1, y: $y1)")
-#println("Answer, part 2: $answer_part2")
+println("Answer, part 2: $answer_part2, (x: $x2, y: $y2)")
 

@@ -28,7 +28,8 @@
      end
    end
    ```
-1. The answer is 1947824 (x: 1817, y: 1072).
+1. The answer to part 1 is 1947824 (x: 1817, y: 1072).
+1. The answer to part 2 is 1813062561 (x: 1817, y: 997833).
 
 ## Problem description
 --- Day 2: Dive! ---
