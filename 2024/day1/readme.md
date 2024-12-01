@@ -2,6 +2,9 @@
 
 ## Notes
 - Think the problem can be simplified as abs(leftListSum - rightListSum).
+  - Turns out this assumption was wrong. Worked for the sample input but not 
+    the real input. Got 568443 which is incorrect, correct answer for part 1 
+    is 1830467. 
 - Besides setting up Deno and have it play nicely with WebStorm most of the 
   time was spent battling the TypeScript types. It was simultaneously 
   impressive and frustrating that the type checker pointed out that there 

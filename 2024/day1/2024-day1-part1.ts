@@ -25,10 +25,16 @@ const getLocationIDs = (fileContents: string): LocationIdPair[] =>
     return [first ?? 0, second ?? 0]; // ensures correct types even on bad input
   });
 
-const inputTextContents = await readTextFile("./day1/inputSample.txt");
-const numberPairs: LocationIdPair[] = getLocationIDs(inputTextContents);
-const sumOfFirstList: number = numberPairs.reduce((acc: number, pair: LocationIdPair) => acc + pair[0], 0);
-const sumOfSecondLIst: number = numberPairs.reduce((acc: number, pair: LocationIdPair) => acc + pair[1], 0);
-const answer: number = Math.abs(sumOfFirstList - sumOfSecondLIst);
+const inputTextContents = await readTextFile("./day1/input.txt");
+const idPairs: LocationIdPair[] = getLocationIDs(inputTextContents);
+const firstListSorted: LocationID[] = idPairs.map(idPair => idPair[0]).sort((a, b) => a - b);
+const secondListSorted: LocationID[] = idPairs.map(idPair => idPair[1]).sort((a, b) => a - b);
 
-console.log(`Answer, 2024, day 1, part 1: ${answer}`);
+let answer = 0;
+
+// For every pair in sorted order
+for (let i = 0; i < firstListSorted.length; i++) {
+  answer += Math.abs(firstListSorted[i] - secondListSorted[i]);
+}
+
+console.log(`Answer, 2024, day 1, part 1: ${answer}`); // 1830467
