@@ -54,12 +54,14 @@ can help The Historians reconcile their lists?
 
 For example:
 
+```
 3   4
 4   3
 2   5
 1   3
 3   9
 3   3
+```
 
 Maybe the lists are only off by a small amount! To find out, pair up the 
 numbers and measure how far apart they are. Pair up the smallest number in the 
@@ -111,12 +113,14 @@ times that number appears in the right list.
 
 Here are the same example lists again:
 
+```
 3   4
 4   3
 2   5
 1   3
 3   9
 3   3
+```
 
 For these example lists, here is the process of finding the similarity score:
 
