@@ -1,5 +1,8 @@
 # Advent of Code, 2024-12-01
 
+## Notes
+- Think the problem can be simplified as abs(leftListSum - rightListSum).
+
 ## Problem description
 --- Day 1: Historian Hysteria ---
 
