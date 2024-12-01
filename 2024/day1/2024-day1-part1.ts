@@ -25,10 +25,12 @@ const getLocationIDs = (fileContents: string): LocationIdPair[] =>
     return [first ?? 0, second ?? 0]; // ensures correct types even on bad input
   });
 
+const inAscendingOrder = (a: number, b: number) => a - b;
+
 const inputTextContents = await readTextFile("./day1/input.txt");
 const idPairs: LocationIdPair[] = getLocationIDs(inputTextContents);
-const firstListSorted: LocationID[] = idPairs.map(idPair => idPair[0]).sort((a, b) => a - b);
-const secondListSorted: LocationID[] = idPairs.map(idPair => idPair[1]).sort((a, b) => a - b);
+const firstListSorted: LocationID[] = idPairs.map(idPair => idPair[0]).sort(inAscendingOrder);
+const secondListSorted: LocationID[] = idPairs.map(idPair => idPair[1]).sort(inAscendingOrder);
 
 let answer = 0;
 
