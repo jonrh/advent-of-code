@@ -1,6 +1,10 @@
 ## Notes
-This year I am going to use Deno and TypeScript.
+- This year I am going to use Deno and TypeScript.
+- As with previous years, most of the time at the starts seems to going towards 
+  setting up the runtime environment and correctly reading from input files.
 
+
+## Deno setup
 Installed Deno through asdf:
 
 ```
