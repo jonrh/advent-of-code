@@ -3,3 +3,6 @@
 
 # Temporary Vim files
 *.swp
+
+# JetBrains IDE settings folders
+.idea/
