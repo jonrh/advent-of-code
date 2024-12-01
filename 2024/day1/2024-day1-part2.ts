@@ -23,7 +23,7 @@ type LocationFrequency = {
 const getLocationIDs = (fileContents: string): LocationIdPair[] =>
   // For every line, seperated by \n newline character
   fileContents.split("\n").map(line => {
-    // Remove newline, split on "   ", and convert str nums to real numbers
+    // Remove newline, split on "   ", and convert str nums to numbers
     const [first, second] = line.trim().split("   ").map(Number);
     return [first ?? 0, second ?? 0]; // ensures correct types even on bad input
   });
