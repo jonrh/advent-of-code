@@ -12,7 +12,7 @@ const parseInput = (fileContents: string): Report[] => {
 
 /**
  * Returns true if a given change in two adjacent levels in a report is unsafe,
- * true otherwise.
+ * false otherwise.
  *
  * Safe conditions:
  *   - report is all in ascending or descending order
