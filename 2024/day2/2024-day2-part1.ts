@@ -1,4 +1,3 @@
-// Types for the content of the input file.
 import { readTextFile } from "../utils/file.ts";
 
 // Types for working with parsed data.
@@ -52,7 +51,7 @@ const isSafe = (report: Report): boolean => {
   return true;
 };
 
-// const inputTextContents = await readTextFile("./day2/inputSample.txt");
+// const inputTextContents = await readTextFile("./day2/sample.txt");
 const inputTextContents = await readTextFile("./day2/input.txt");
 const reports: Report[] = parseInput(inputTextContents);
 const numberOfSafeReports = reports.reduce((acc: number, report: Report) =>

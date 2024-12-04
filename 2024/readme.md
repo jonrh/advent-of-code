@@ -2,7 +2,13 @@
 - This year I am going to use Deno and TypeScript.
 - As with previous years, most of the time at the starts seems to going towards 
   setting up the runtime environment and correctly reading from input files.
+- Other TypeScript solutions to Advent of Code 2024: https://github.com/Bogdanp/awesome-advent-of-code?tab=readme-ov-file#typescript
 
+## Learnings
+- TS has template literal types. Example: `type A = `${number} ${number}`.
+- Learned that Deno has a convenience function to read and return the contents
+  of a text file: `const data = await Deno.readTextFile('./day_02/input.txt');`.
+  Was using a utility function by the same name which is now redundant.
 
 ## Deno setup
 Installed Deno through asdf:
