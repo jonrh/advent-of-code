@@ -1,5 +1,11 @@
 # Advent of Code, 2024-12-02
 
+- Wrote the solution initially on the false assumption that the demo data 
+  was structurally the same as the real data. Demo data had 5 numbers on 
+  each line but real data could contain a lot more numbers. Very easy change 
+  to account for but in the future it is likely best to take a peak at the 
+  real input data before working on the solution to avoid false assumptions. 
+
 ## Problem description, part 1
 --- Day 2: Red-Nosed Reports ---
 

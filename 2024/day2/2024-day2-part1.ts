@@ -3,12 +3,11 @@ import { readTextFile } from "../utils/file.ts";
 
 // Types for working with parsed data.
 type Level = number;
-type Report = [Level, Level, Level, Level, Level];
+type Report = Level[];
 
 const parseInput = (fileContents: string): Report[] => {
   return fileContents.split("\n").map(line => {
-    const [a, b, c, d, e] = line.trim().split(" ").map(Number);
-    return [a, b, c, d, e];
+    return line.trim().split(" ").map(Number);
   });
 };
 
@@ -27,19 +26,13 @@ const isSafe = (report: Report): boolean => {
     }
   }
 
-  // 7 6 4 2 1
-  // 1 2 7 8 9
-  // 9 7 6 2 1
-  // 1 3 2 4 5
-  // 8 6 4 4 1
-  // 1 3 6 7 9
-
   return true;
 };
 
-const inputTextContents = await readTextFile("./day2/inputSample.txt");
+// const inputTextContents = await readTextFile("./day2/inputSample.txt");
+const inputTextContents = await readTextFile("./day2/input.txt");
 const reports: Report[] = parseInput(inputTextContents);
 const numberOfSafeReports = reports.reduce((acc: number, report: Report) =>
   acc + oneIfSafe(report), 0);
 
-console.log(`Answer, 2024, day 2, part 1: ${numberOfSafeReports}`);
+console.log(`Answer, 2024, day 2, part 1: ${numberOfSafeReports}`); // 483
