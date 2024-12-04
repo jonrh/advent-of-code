@@ -1,3 +1,8 @@
+# Advent of code requests that the puzzle text description and inputs for each
+# problem is not publically shared. https://adventofcode.com/about#legal
+input.txt
+sample.txt
+
 # macOS Finder preferences
 .DS_Store
 
